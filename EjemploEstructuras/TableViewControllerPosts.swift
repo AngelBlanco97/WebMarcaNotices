@@ -16,6 +16,9 @@ class TableViewControllerPosts: UITableViewController, XMLParserDelegate {
     var nombreElemento = String()
     @IBOutlet var tabla: UITableView!
     
+    let defaults = UserDefaults.standard
+    var arrayFavoritos: Array<Post> = []
+    
     
     var decision = ""
     
@@ -147,6 +150,4 @@ class TableViewControllerPosts: UITableViewController, XMLParserDelegate {
         }
     }
     
-    
-
 }

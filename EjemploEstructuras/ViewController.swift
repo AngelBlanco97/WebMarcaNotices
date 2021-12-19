@@ -15,8 +15,12 @@ class ViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var favButton: UIBarButtonItem!
     
     var contenidoWeb: String?
+    var userDefaults = UserDefaults.standard
+    
+    
     
     
     override func viewDidLoad() {
@@ -66,7 +70,19 @@ class ViewController: UIViewController, WKNavigationDelegate {
         self.present(activityACompartir, animated: true, completion: nil)
         
         
+    }
+    
+    // FUNCION QUE PERMITE GUARDAR EL POST EN FAVORITOS
+    
+    @IBAction func addFavPage(_ sender: Any) {
+        let nombre = self.webView.title!
+        let url = self.webView.url!
+        let objecto = [nombre,url] as [Any]
+        
+        userDefaults.set(objecto, forKey: "Pagina Preferida")
+        
         
     }
+    
 }
 

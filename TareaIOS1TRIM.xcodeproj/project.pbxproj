@@ -16,6 +16,9 @@
 		0B93D80F27673A740097012F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B93D80D27673A740097012F /* LaunchScreen.storyboard */; };
 		0B93D81727673AB00097012F /* dato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93D81627673AB00097012F /* dato.swift */; };
 		0B93D81B27673BED0097012F /* TableViewControllerPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93D81A27673BED0097012F /* TableViewControllerPosts.swift */; };
+		BE3F9F22276F80F6004942B0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F9F21276F80F6004942B0 /* ProfileViewController.swift */; };
+		BE3F9F24276F88F6004942B0 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F9F23276F88F6004942B0 /* FavoritesTableViewController.swift */; };
+		BE3F9F26276F9ABB004942B0 /* EditUserDefaultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F9F25276F9ABB004942B0 /* EditUserDefaultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		0B93D81027673A740097012F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B93D81627673AB00097012F /* dato.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dato.swift; sourceTree = "<group>"; };
 		0B93D81A27673BED0097012F /* TableViewControllerPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerPosts.swift; sourceTree = "<group>"; };
+		BE3F9F21276F80F6004942B0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BE3F9F23276F88F6004942B0 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		BE3F9F25276F9ABB004942B0 /* EditUserDefaultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserDefaultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +68,14 @@
 		0B93D80127673A730097012F /* EjemploEstructuras */ = {
 			isa = PBXGroup;
 			children = (
+				BE3F9F25276F9ABB004942B0 /* EditUserDefaultsViewController.swift */,
 				0B93D81627673AB00097012F /* dato.swift */,
 				0B93D80227673A730097012F /* AppDelegate.swift */,
 				0B93D80427673A730097012F /* SceneDelegate.swift */,
 				0B93D80627673A730097012F /* ViewController.swift */,
 				0B93D80827673A730097012F /* Main.storyboard */,
+				BE3F9F23276F88F6004942B0 /* FavoritesTableViewController.swift */,
+				BE3F9F21276F80F6004942B0 /* ProfileViewController.swift */,
 				0B513F28276CCB4700366863 /* SelectorNoticiasViewController.swift */,
 				0B93D81A27673BED0097012F /* TableViewControllerPosts.swift */,
 				0B93D80B27673A740097012F /* Assets.xcassets */,
@@ -151,8 +160,11 @@
 			files = (
 				0B93D80727673A730097012F /* ViewController.swift in Sources */,
 				0B513F29276CCB4700366863 /* SelectorNoticiasViewController.swift in Sources */,
+				BE3F9F26276F9ABB004942B0 /* EditUserDefaultsViewController.swift in Sources */,
 				0B93D81727673AB00097012F /* dato.swift in Sources */,
+				BE3F9F24276F88F6004942B0 /* FavoritesTableViewController.swift in Sources */,
 				0B93D80327673A730097012F /* AppDelegate.swift in Sources */,
+				BE3F9F22276F80F6004942B0 /* ProfileViewController.swift in Sources */,
 				0B93D80527673A730097012F /* SceneDelegate.swift in Sources */,
 				0B93D81B27673BED0097012F /* TableViewControllerPosts.swift in Sources */,
 			);
