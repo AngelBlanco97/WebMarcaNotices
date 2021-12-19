@@ -12,6 +12,7 @@ class EditUserDefaultsViewController: UIViewController {
     @IBOutlet weak var newUserName: UITextField!
     @IBOutlet weak var newSubName: UITextField!
     @IBOutlet weak var saveNewData: UIButton!
+    @IBOutlet weak var txt: UILabel!
     
     let defaults = UserDefaults.standard
     
@@ -19,6 +20,7 @@ class EditUserDefaultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Edit Profile"
+        txt.text = "Guarda los cambios"
         
         // Do any additional setup after loading the view.
     }
@@ -31,7 +33,8 @@ class EditUserDefaultsViewController: UIViewController {
         defaults.set(username, forKey: "name")
         defaults.set(subname, forKey: "subname")
         
-        print("Datos cambiados")
+        txt.text = "Datos cambiados"
+        
         
     }
     

@@ -17,7 +17,6 @@
 		0B93D81727673AB00097012F /* dato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93D81627673AB00097012F /* dato.swift */; };
 		0B93D81B27673BED0097012F /* TableViewControllerPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93D81A27673BED0097012F /* TableViewControllerPosts.swift */; };
 		BE3F9F22276F80F6004942B0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F9F21276F80F6004942B0 /* ProfileViewController.swift */; };
-		BE3F9F24276F88F6004942B0 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F9F23276F88F6004942B0 /* FavoritesTableViewController.swift */; };
 		BE3F9F26276F9ABB004942B0 /* EditUserDefaultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F9F25276F9ABB004942B0 /* EditUserDefaultsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		0B93D81627673AB00097012F /* dato.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dato.swift; sourceTree = "<group>"; };
 		0B93D81A27673BED0097012F /* TableViewControllerPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerPosts.swift; sourceTree = "<group>"; };
 		BE3F9F21276F80F6004942B0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		BE3F9F23276F88F6004942B0 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		BE3F9F25276F9ABB004942B0 /* EditUserDefaultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserDefaultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +72,6 @@
 				0B93D80427673A730097012F /* SceneDelegate.swift */,
 				0B93D80627673A730097012F /* ViewController.swift */,
 				0B93D80827673A730097012F /* Main.storyboard */,
-				BE3F9F23276F88F6004942B0 /* FavoritesTableViewController.swift */,
 				BE3F9F21276F80F6004942B0 /* ProfileViewController.swift */,
 				0B513F28276CCB4700366863 /* SelectorNoticiasViewController.swift */,
 				0B93D81A27673BED0097012F /* TableViewControllerPosts.swift */,
@@ -162,7 +159,6 @@
 				0B513F29276CCB4700366863 /* SelectorNoticiasViewController.swift in Sources */,
 				BE3F9F26276F9ABB004942B0 /* EditUserDefaultsViewController.swift in Sources */,
 				0B93D81727673AB00097012F /* dato.swift in Sources */,
-				BE3F9F24276F88F6004942B0 /* FavoritesTableViewController.swift in Sources */,
 				0B93D80327673A730097012F /* AppDelegate.swift in Sources */,
 				BE3F9F22276F80F6004942B0 /* ProfileViewController.swift in Sources */,
 				0B93D80527673A730097012F /* SceneDelegate.swift in Sources */,

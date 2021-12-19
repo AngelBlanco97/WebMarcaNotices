@@ -20,6 +20,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     var contenidoWeb: String?
     var userDefaults = UserDefaults.standard
     
+    var directiories: NSMutableArray = [];
     
     
     
@@ -79,7 +80,12 @@ class ViewController: UIViewController, WKNavigationDelegate {
         let url = self.webView.url!
         let objecto = [nombre,url] as [Any]
         
-        userDefaults.set(objecto, forKey: "Pagina Preferida")
+        
+        directiories.add(objecto)
+        print(directiories)
+        
+        
+        userDefaults.set(directiories, forKey: "favoritos")
         
         
     }
