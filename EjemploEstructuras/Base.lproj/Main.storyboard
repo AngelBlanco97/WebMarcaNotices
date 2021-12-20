@@ -41,15 +41,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AK7-9X-DHU">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="A4N-PK-SiJ">
-                            <color key="tintColor" systemColor="systemGreenColor"/>
-                            <connections>
-                                <action selector="shareInfo:" destination="BYZ-38-t0r" id="rf3-RX-sW5"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="action" id="A4N-PK-SiJ">
+                                <connections>
+                                    <action selector="shareInfo:" destination="BYZ-38-t0r" id="rf3-RX-sW5"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="heart" catalog="system" id="STG-o6-YUx">
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="addFavPage:" destination="BYZ-38-t0r" id="9WT-F0-UHb"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="activity" destination="hE3-zT-qnW" id="pEs-zJ-BRY"/>
+                        <outlet property="favButton" destination="STG-o6-YUx" id="Icf-eI-GxB"/>
                         <outlet property="webView" destination="Ypq-ge-udE" id="kwx-75-mvt"/>
                     </connections>
                 </viewController>
@@ -140,15 +148,6 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfg-Br-ZU0">
-                                <rect key="frame" x="170" y="635" width="88.999999999999972" height="31"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Actualizar"/>
-                                <connections>
-                                    <action selector="actualizar:" destination="e1Y-Ty-rlm" eventType="touchUpInside" id="bDs-pX-pNp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J64-8D-tzs"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,17 +157,14 @@
                             <constraint firstItem="GZe-NA-w8X" firstAttribute="leading" secondItem="J64-8D-tzs" secondAttribute="leading" constant="20" id="J20-Yy-Uuf"/>
                             <constraint firstItem="V3h-Ts-eY2" firstAttribute="leading" secondItem="J64-8D-tzs" secondAttribute="leading" constant="20" id="MT7-ur-YvG"/>
                             <constraint firstItem="V3h-Ts-eY2" firstAttribute="centerX" secondItem="yVw-ir-yDF" secondAttribute="centerX" id="aaY-Z7-ulz"/>
-                            <constraint firstItem="J64-8D-tzs" firstAttribute="bottom" secondItem="xfg-Br-ZU0" secondAttribute="bottom" id="f0J-VQ-w0v"/>
                             <constraint firstItem="V3h-Ts-eY2" firstAttribute="centerY" secondItem="yVw-ir-yDF" secondAttribute="centerY" id="g9r-uZ-gdv"/>
-                            <constraint firstItem="xfg-Br-ZU0" firstAttribute="bottom" secondItem="J64-8D-tzs" secondAttribute="bottom" constant="55" id="nwQ-hY-iu8"/>
                             <constraint firstItem="GZe-NA-w8X" firstAttribute="top" secondItem="V3h-Ts-eY2" secondAttribute="bottom" constant="30" id="rRg-OI-mue"/>
-                            <constraint firstItem="xfg-Br-ZU0" firstAttribute="centerX" secondItem="yVw-ir-yDF" secondAttribute="centerX" id="uOf-LE-XCX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Coi-Va-HbG">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="y6W-7o-j6Z">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="tqQ-yc-dRM">
-                                <rect key="frame" x="328" y="447.66666666666669" width="49.666666666666686" height="31"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="tqQ-yc-dRM">
+                                <rect key="frame" x="353.66666666666669" y="5" width="54.333333333333314" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system" title=" ">
@@ -240,6 +236,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Este campo no puede estar vacio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUu-Et-oXB">
+                                <rect key="frame" x="87.666666666666686" y="352" width="253" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Este campo no puede estar vacio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92h-65-Wqa">
+                                <rect key="frame" x="87.666666666666686" y="502" width="253" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nC6-42-Jcw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -250,16 +258,22 @@
                             <constraint firstItem="LeF-n5-OQa" firstAttribute="centerX" secondItem="GWn-kB-eXf" secondAttribute="centerX" id="ElQ-6e-Hyy"/>
                             <constraint firstItem="KDV-iw-08I" firstAttribute="top" secondItem="LeF-n5-OQa" secondAttribute="bottom" constant="32" id="FaV-3Q-pYZ"/>
                             <constraint firstItem="gWm-eq-ggt" firstAttribute="top" secondItem="KDV-iw-08I" secondAttribute="bottom" constant="50" id="HgQ-Be-QC9"/>
+                            <constraint firstItem="92h-65-Wqa" firstAttribute="top" secondItem="LeF-n5-OQa" secondAttribute="bottom" constant="70" id="Jbj-CY-h3M"/>
                             <constraint firstItem="gWm-eq-ggt" firstAttribute="centerX" secondItem="GWn-kB-eXf" secondAttribute="centerX" id="K6b-JI-fZr"/>
                             <constraint firstItem="Ugn-zl-S2x" firstAttribute="centerX" secondItem="GWn-kB-eXf" secondAttribute="centerX" id="On1-zM-gHR"/>
                             <constraint firstItem="h3B-2y-W21" firstAttribute="centerX" secondItem="GWn-kB-eXf" secondAttribute="centerX" id="QkK-Ge-KAg"/>
                             <constraint firstItem="hih-hw-zTS" firstAttribute="centerX" secondItem="GWn-kB-eXf" secondAttribute="centerX" id="Rro-Rz-AFf"/>
+                            <constraint firstItem="92h-65-Wqa" firstAttribute="centerX" secondItem="GWn-kB-eXf" secondAttribute="centerX" id="WjY-6X-C2b"/>
+                            <constraint firstItem="CUu-Et-oXB" firstAttribute="top" secondItem="hih-hw-zTS" secondAttribute="bottom" constant="8" id="axp-hr-cie"/>
+                            <constraint firstItem="CUu-Et-oXB" firstAttribute="centerX" secondItem="GWn-kB-eXf" secondAttribute="centerX" id="flq-Cp-FtG"/>
                             <constraint firstItem="hih-hw-zTS" firstAttribute="top" secondItem="Ugn-zl-S2x" secondAttribute="bottom" constant="32" id="jlO-Fm-Rgo"/>
                             <constraint firstItem="Ugn-zl-S2x" firstAttribute="top" secondItem="nC6-42-Jcw" secondAttribute="top" constant="117" id="qcc-EH-M2J"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MGl-b2-ZCn"/>
                     <connections>
+                        <outlet property="campoVacioName" destination="CUu-Et-oXB" id="J1f-sR-AxA"/>
+                        <outlet property="campoVacioSubname" destination="92h-65-Wqa" id="t0I-pj-giu"/>
                         <outlet property="newSubName" destination="KDV-iw-08I" id="jct-Gq-Ucv"/>
                         <outlet property="newUserName" destination="hih-hw-zTS" id="0Hj-AI-AFG"/>
                         <outlet property="saveNewData" destination="gWm-eq-ggt" id="i6c-mH-l3g"/>
@@ -357,13 +371,11 @@
     </scenes>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -13,7 +13,8 @@ class EditUserDefaultsViewController: UIViewController {
     @IBOutlet weak var newSubName: UITextField!
     @IBOutlet weak var saveNewData: UIButton!
     @IBOutlet weak var txt: UILabel!
-    
+    @IBOutlet weak var campoVacioName: UILabel!
+    @IBOutlet weak var campoVacioSubname: UILabel!
     let defaults = UserDefaults.standard
     
     
@@ -21,34 +22,40 @@ class EditUserDefaultsViewController: UIViewController {
         super.viewDidLoad()
         title = "Edit Profile"
         txt.text = "Guarda los cambios"
+        campoVacioName.isHidden = true
+        campoVacioSubname.isHidden = true
         
         // Do any additional setup after loading the view.
     }
     
     // GUARDAMOS LA INFORMACION CONTENIDA EN LOS INPUTS EN LOS USERDEFAULTS
     @IBAction func saveUserDefaults(_ sender: Any) {
-        guard let username = newUserName.text else {return}
-        guard let subname = newSubName.text else {return}
-        
-        defaults.set(username, forKey: "name")
-        defaults.set(subname, forKey: "subname")
-        
-        txt.text = "Datos cambiados"
         
         
+        guard let username = newUserName.text, username != "" else {
+            campoVacioName.isHidden = false
+            txt.text = "No se ha podido guardar"
+            return
+        }
+        guard let subname = newSubName.text, subname != "" else {
+            campoVacioSubname.isHidden = false
+            txt.text = "No se ha podido guardar."
+            return
+        }
+        
+        
+         
+        
+        if (!username.isEmpty && !subname.isEmpty){
+            // EN CASO DE QUE SE HAYAN RELLENADO, CAMBIAMOS LAS PREFERENCIAS DE USUARIO Y AVISAMOS AL USUARIO DEL CAMBIO.
+            defaults.set(username, forKey: "name")
+            defaults.set(subname, forKey: "subname")
+            campoVacioName.isHidden = true
+            campoVacioSubname.isHidden = true
+            
+            txt.text = "Datos cambiados"
+            
+        }
     }
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

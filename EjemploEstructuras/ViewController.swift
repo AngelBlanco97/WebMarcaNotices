@@ -17,6 +17,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var favButton: UIBarButtonItem!
     
+    
     var contenidoWeb: String?
     var userDefaults = UserDefaults.standard
     
@@ -73,21 +74,14 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
     }
     
-    // FUNCION QUE PERMITE GUARDAR EL POST EN FAVORITOS
     
+    // FUNCION QUE PERMITE GUARDAR EL POST EN FAVORITOS
     @IBAction func addFavPage(_ sender: Any) {
-        let nombre = self.webView.title!
-        let url = self.webView.url!
-        let objecto = [nombre,url] as [Any]
-        
-        
-        directiories.add(objecto)
-        print(directiories)
-        
-        
-        userDefaults.set(directiories, forKey: "favoritos")
-        
-        
+        if (favButton.image == UIImage(systemName: "heart")) {
+                favButton.image = UIImage(systemName: "heart.fill")
+        } else  {
+            favButton.image = UIImage(systemName: "heart")
+        }
     }
     
 }

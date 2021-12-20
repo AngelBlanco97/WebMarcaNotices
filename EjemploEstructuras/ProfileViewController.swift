@@ -25,11 +25,12 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    // BOTON QUE NOS SERVIRA PARA ACTUALIZAR EL NOMBRE DE PERFIL
-    
-    @IBAction func actualizar(_ sender: Any) {
+    // CADA VEZ QUE CARGUE LA PANTALLA, SE ACTUALIZARA LOS NOMBRES SEGUN LAS PREFERENCIAS DEL USUARIO 
+    override func viewDidAppear(_ animated: Bool) {
         setNames();
     }
+    
+    
     
     // BUSCA LOS VALORES DEL USERDEFAULTS PARA SETEARLOS EN LOS LABELS 
     func setNames() {

@@ -14,6 +14,7 @@ class TableViewControllerPosts: UITableViewController, XMLParserDelegate {
     var link = String()
     var descrip = String()
     var nombreElemento = String()
+    
     @IBOutlet var tabla: UITableView!
     
     let defaults = UserDefaults.standard
@@ -33,7 +34,14 @@ class TableViewControllerPosts: UITableViewController, XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = decision
-        
+        cargarDatos();
+       
+        // CREAMOS UN REFRESH CONTROL, QUE SIRVE PARA HACER LA ANIMACION DE RECARGA DE DATOS. ESTA LLAMARA A LA FUNCION DE SU ACTION, Y HARIA LA CARGA DE DATOS. 
+        tabla.refreshControl = UIRefreshControl()
+        tabla.refreshControl?.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
+    }
+    
+    func cargarDatos() {
         
         // HACEMOS QUE LA DECISION DEL PICKER VIEW ENVIADAS POR SEGUE TE MUESTRE LAS INFORMACIONES DE LA MISMA CATEGORIA
         if (decision == "Futbol") {
@@ -63,11 +71,16 @@ class TableViewControllerPosts: UITableViewController, XMLParserDelegate {
         }
         
 
-
-        
+       
     }
 
-    
+    @objc private func didRefresh() {
+        // FUNCION QUE ANIMA EL REFRESH DE LA TABLA Y LLAMA AL METODO DE CARGA DE DATOS
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            self.tabla.refreshControl?.endRefreshing()
+        }
+        cargarDatos();
+    }
     
     // METODOS DELEGADOS DE XMLPARSER
     
